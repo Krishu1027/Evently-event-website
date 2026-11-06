@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evently – Discover & Register for Events</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header>
+    <a href="#" class="logo">Evently</a>
+    <nav>
+      <a href="#events">Events</a>
+      <a href="#registrations">My Registrations</a>
+      <button id="themeBtn" aria-label="Switch theme">🌙</button>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Find your next big event.</h1>
+    <p>Hackathons, concerts, workshops and more. Pick one and register in under a minute.</p>
+    <a href="#events" class="btn">Browse events</a>
+  </section>
+
+  <main>
+    <!-- EVENTS -->
+    <section id="events">
+      <h2>Upcoming events</h2>
+      <div class="filters">
+        <input type="search" id="search" placeholder="Search events...">
+        <select id="category">
+          <option value="All">All categories</option>
+          <option>Tech</option>
+          <option>Music</option>
+          <option>Art</option>
+          <option>Sports</option>
+        </select>
+      </div>
+      <div id="eventGrid" class="grid"></div>
+    </section>
+
+    <!-- SAVED REGISTRATIONS -->
+    <section id="registrations">
+      <h2>My registrations</h2>
+      <ul id="regList"></ul>
+    </section>
+  </main>
+
+  <footer>© 2026 Evently · Built with HTML, CSS & JavaScript</footer>
+
+  <!-- EVENT DETAILS + REGISTRATION POPUP -->
+  <dialog id="modal">
+    <button id="closeBtn" class="close" aria-label="Close">✕</button>
+    <img id="mImg" alt="">
+    <h3 id="mName"></h3>
+    <p id="mMeta" class="meta"></p>
+    <p id="mDesc"></p>
+    <p class="countdown" id="mCountdown"></p>
+
+    <form id="form" novalidate>
+      <label>Name <input type="text" id="name" placeholder="Your full name"></label>
+      <small class="error" id="nameErr"></small>
+
+      <label>Email <input type="email" id="email" placeholder="you@example.com"></label>
+      <small class="error" id="emailErr"></small>
+
+      <label>Phone <input type="tel" id="phone" placeholder="10-digit number"></label>
+      <small class="error" id="phoneErr"></small>
+
+      <label>Event <select id="eventSelect"></select></label>
+
+      <button type="submit" class="btn">Register now</button>
+    </form>
+    <p id="success" class="success" hidden></p>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
